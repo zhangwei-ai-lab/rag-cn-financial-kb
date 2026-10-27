@@ -1,0 +1,23 @@
+# 运行环境：Python 3.10+
+dashscope>=1.20.0
+pydantic>=2.5
+json-repair>=0.30
+tenacity>=8.2
+tiktoken>=0.7
+python-dotenv>=1.0
+numpy>=1.26
+pandas>=2.1
+faiss-cpu>=1.8
+rank-bm25>=0.2.2
+# 注意：不要锁 1.24.x —— 该系列没有 Python 3.13 的 wheel，会退化为源码编译（耗时极长）
+pymupdf>=1.26
+pymupdf4llm>=1.0
+# 本地向量化（EMBEDDING_BACKEND=st 时需要；只用云端 embedding 可不装）
+sentence-transformers>=3.0
+torch>=2.4
+huggingface-hub>=0.23
+
+streamlit>=1.36
+click>=8.1
+requests>=2.31
+tqdm>=4.66

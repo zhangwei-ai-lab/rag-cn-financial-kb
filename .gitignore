@@ -1,0 +1,41 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---------- 密钥与本地配置 ----------
+# .env 内含 MINERU_API_KEY / DASHSCOPE_API_KEY，绝不能提交
+.env
+.env.local
+
+# ---------- 中间产物与索引（可由脚本重建）----------
+data/stock_data/parsed/
+data/stock_data/chunks/
+data/stock_data/index/
+data/stock_data/answers/
+data/stock_data/mineru/
+data/stock_data/_parsed_*/
+data-gym-cache/
+
+# ---------- 本地模型权重 ----------
+# 体积约 92MB，请用 scripts/fetch_embedding_model.py 下载
+models/
+
+# ---------- 原始 PDF 语料 ----------
+# 券商研报与年报属第三方版权材料，不放入公开仓库；
+# 自行把 PDF 放进 data/stock_data/pdf_reports/ 即可复现
+data/stock_data/pdf_reports/
+
+# ---------- 运行日志 ----------
+*.log
+streamlit.out
+streamlit.err
+
+# ---------- 系统与编辑器 ----------
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

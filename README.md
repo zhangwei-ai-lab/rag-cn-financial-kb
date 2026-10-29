@@ -1,5 +1,11 @@
 # RAG-财报企业知识库（基于RAG-Challenge-2自建 RAG 系统）
 
+## 界面预览
+
+![RAG 财报企业知识库界面](docs/images/ui-demo.png)
+
+左边输入问题、选择答案类型与召回页数；右边给出最终答案、**带文档名与页码的证据表**，以及召回 / 页面聚合 / LLM 重排 / 生成四段耗时。
+
 | 原项目区别 | 本项目做法 | 状态 |
 | --- | --- | --- |
 | 用 DashScope 替换 OpenAI，LLM 用 qwen，embedding 用 text_embedding | 对话与向量化都做成可切换后端：`dashscope`（qwen-plus + text-embedding-v3）或**本地 Ollama**（qwen3-8b）或 `st`（本地 bge-small-zh）。当前交付配置为**全本地**：`qwen3-8b-local`（生成/重排）+ `qwen3-embedding:0.6b`（向量） | ✅ 已跑通 |
@@ -52,6 +58,7 @@ RAG-财报企业知识库/
 ├─ app_streamlit.py        Streamlit 界面
 ├─ requirements.txt
 ├─ .env / .env.example     密钥与模型配置
+├─ docs/images/            界面截图等文档图片
 ├─ src/
 │  ├─ config.py            全部超参数（分块大小、召回数、权重…）
 │  ├─ llm.py               DashScope / OpenAI 兼容 / Ollama 三种后端 + 重试 + 用量统计
